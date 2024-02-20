@@ -1,0 +1,260 @@
+<html>
+  <head>
+    <title>Fantacy Cricket</title>
+  </head>
+  <body style="background-color:LightGray;">
+    <h1 style="
+        background-color: #081b31;
+        color: #fff;
+        height: 5rem;
+        line-height: 5rem;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        border-radius: 100px;
+    ">
+    Fantacy Cricket
+    </h1>
+    <div id="tossDiv">
+      <div
+        style="
+          border: 10px solid;
+          border-radius: 40px;
+          height: 10rem;
+          width: 50rem;
+          margin: auto;
+          margin-top: 50px;
+          background-color: rgba(106, 212, 175, 0.168);
+        "
+      >
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 30px;
+          "
+        >
+          <input
+            type="text"
+            id="team1"
+            placeholder="team 1"
+            style="
+              border: none;
+              text-align: center;
+              margin-right: 10px;
+              border-radius: 20px;
+              padding: auto;
+            "
+          />
+          <input
+            type="text"
+            id="team2"
+            placeholder="team 2"
+            style="
+              border: none;
+              text-align: center;
+              margin-left: 10px;
+              border-radius: 20px;
+              padding: auto;
+            "
+          />
+        </div>
+        <div style="display: flex; justify-content: center; margin-top: 20px">
+          <button
+            type="submit"
+            id="toss"
+            style="
+              border: none;
+              border-radius: 20px;
+              background-color: teal;
+              color: #fff;
+            "
+          >
+            Toss
+          </button>
+        </div>
+        <p
+          id="printToss"
+          style="display: flex; justify-content: center; margin-top: 20px"
+        ></p>
+      </div>
+      <div id="ForPlayerAndTeamSelection" style="display: none;">
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+        "
+      >
+        <div style="margin-right: 80px; margin-left: 83px">
+          <h2>Player Selection</h2>
+          <p id="fantasyPiont"></p>
+          <div
+            style="
+              width: 450px;
+              height: 350px;
+              border-radius: 20px;
+              overflow: scroll;
+              padding: 5px;
+              background-color: teal;
+              color: #fff;
+              scrollbar-base-color: #000;
+            "
+            id="bat"
+          ></div>
+        </div>
+        
+        <div style="margin-right: 100px">
+          <h2 id="teamOf11Player"></h2>
+          <p id="capSelection"></p>
+          <p id="vicCapSelection"></p>
+          <div
+            id="showCapAndVicecap"
+            style="
+              width: 450px;
+              height: 350px;
+              border-radius: 20px;
+              overflow: scroll;
+              padding: 5px;
+              background-color: teal;
+              color: #fff;
+              scrollbar-base-color: #000;
+              margin-top: 4rem;
+            "
+          ></div>
+          <button
+            onclick="TeamMaking()"
+            id="forCaptain"
+            style="
+              border: none;
+              border-radius: 20px;
+              padding: 5px;
+              margin-top: 5px;
+            "
+          >
+            continue
+          </button>
+        </div>
+
+       
+      </div>
+      <button
+        id="Letsgo"
+        onclick="none()"
+        style="
+          display: flex;
+          margin-left: 40rem;
+          margin-top: 30px;
+          padding: 6px;
+          border: none;
+          border-radius: 10px;
+        "
+      >
+        Lets go
+      </button>
+    </div>
+  </div>
+    <div
+      id="ScoreView"
+      style="
+        display: none;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      "
+    >
+      <div
+        id="teamPoint"
+        style="
+          width: 300px;
+          height: 560px;
+          border-radius: 20px;
+          overflow: scroll;
+          padding: 5px;
+          background-color: teal;
+          color: #fff;
+          scrollbar-base-color: #000;
+          margin-right: 20px;
+        "
+      ></div>
+      <div
+        style="
+          width: 300px;
+          height: 350px;
+
+          border-radius: 20px;
+          overflow: scroll;
+          padding: 5px;
+
+          color: #ccffe6;
+          scrollbar-base-color: #000;
+        "
+      >
+      <button id = "hit" onclick="delayedButtonClick();" style="margin-top: 10rem; margin-left: 8rem">
+        Play
+        </button>
+      </div>
+      <div
+        id="LiveScore"
+        style="
+          width: 300px;
+          height: 560px;
+          border-radius: 20px;
+          overflow: scroll;
+          padding: 5px;
+          background-color: teal;
+          color: #fff;
+          scrollbar-base-color: #000;
+        "
+      ></div>
+    </div>
+    <div id="ScoreBord" style="display: none">
+      <h2 id="winner" style="display: flex; justify-content: center"></h2>
+      <div style="display: flex; justify-content: center">
+        <p id="team1Name" style="margin-right: 17rem"></p>
+        <p id="team2Name"></p>
+      </div>
+
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+        "
+      >
+        <div
+          id="team1score"
+          style="
+            width: 300px;
+            height: 550px;
+            border-radius: 20px;
+            overflow: scroll;
+            padding: 5px;
+            background-color: teal;
+            color: #fff;
+            scrollbar-base-color: #000;
+            margin-right: 20px;
+          "
+        ></div>
+
+        <div
+          id="team2score"
+          style="
+            width: 300px;
+            height: 550px;
+            border-radius: 20px;
+            overflow: scroll;
+            padding: 5px;
+            background-color: teal;
+            color: #fff;
+            scrollbar-base-color: #000;
+          "
+        ></div>
+      </div>
+    </div>
+    <script src="Dream.js"></script>
+  </body>
+</html>
